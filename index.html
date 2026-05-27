@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Pingpong 2 Pemain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>PINGPONG CRAZY </h1>
+
+    <div class="kontrol-info">
+        <div><b>P1 (Kiri):</b> W (Atas) / S (Bawah)</div>
+        <div id="status-efek">Atur Poin di Menu Utama!</div>
+        <div><b>P2 (Kanan):</b> ▲ (Atas) / ▼ (Bawah)</div>
+    </div>
+
+    <div id="canvas-container">
+        <div id="menu-utama">
+            <h2 id="judul-menu">PONG MULTIPLAYER</h2>
+            <div id="pemenang-teks" style="display: none;"></div>
+
+            <div class="pengaturan-poin">
+                <label for="maxScore">Target Poin Kemenangan:</label>
+                <input type="number" id="maxScore" value="5" min="1" max="99">
+            </div>
+
+            <button class="btn-mulai" id="btn-start">MULAI BERMAIN</button>
+
+            <div class="instruksi-menu">
+                <p>[P1] W/S untuk bergerak | [P2] Panah Atas/Bawah untuk bergerak</p>
+                <p>Tabrak KOTAK MISTERI di tengah untuk mengaktifkan Power-Up acak!</p>
+            </div>
+        </div>
+
+        <canvas id="pongCanvas" width="800" height="500"></canvas>
+    </div>
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>

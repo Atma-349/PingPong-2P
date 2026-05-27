@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Game Pingpong 2 Pemain</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>PINGPONG CRAZY </h1>
+    <h1>PINGPONG CRAZY</h1>
 
     <div class="kontrol-info">
-        <div><b>P1 (Kiri):</b> W (Atas) / S (Bawah)</div>
+        <div><b>P1 (Kiri):</b> W / S</div>
         <div id="status-efek">Atur Poin di Menu Utama!</div>
-        <div><b>P2 (Kanan):</b> ▲ (Atas) / ▼ (Bawah)</div>
+        <div><b>P2 (Kanan):</b> ▲ / ▼</div>
     </div>
 
-    <div id="canvas-container">
-        <div id="menu-utama">
-            <h2 id="judul-menu">PONG MULTIPLAYER</h2>
-            <div id="pemenang-teks" style="display: none;"></div>
+    <div id="canvas-wrapper">
+        <div id="canvas-container">
+            <div id="menu-utama">
+                <h2 id="judul-menu">PONG MULTIPLAYER</h2>
+                <div id="pemenang-teks" style="display: none;"></div>
 
-            <div class="pengaturan-poin">
-                <label for="maxScore">Target Poin Kemenangan:</label>
-                <input type="number" id="maxScore" value="5" min="1" max="99">
+                <div class="pengaturan-poin">
+                    <label for="maxScore">Target Poin Kemenangan:</label>
+                    <input type="number" id="maxScore" value="5" min="1" max="99">
+                </div>
+
+                <button class="btn-mulai" id="btn-start">MULAI BERMAIN</button>
+
+                <div class="instruksi-menu">
+                    <p>[P1] W/S atau tombol kiri | [P2] ↑↓ atau tombol kanan</p>
+                    <p>Tabrak KOTAK MISTERI untuk Power-Up acak!</p>
+                </div>
             </div>
 
-            <button class="btn-mulai" id="btn-start">MULAI BERMAIN</button>
+            <canvas id="pongCanvas" width="800" height="500"></canvas>
+        </div>
+    </div>
 
-            <div class="instruksi-menu">
-                <p>[P1] W/S untuk bergerak | [P2] Panah Atas/Bawah untuk bergerak</p>
-                <p>Tabrak KOTAK MISTERI di tengah untuk mengaktifkan Power-Up acak!</p>
-            </div>
+    <!-- Kontrol Sentuh Mobile -->
+    <div id="mobile-controls">
+        <!-- Tombol P1 (kiri) -->
+        <div class="ctrl-group ctrl-left">
+            <div class="player-label">P1</div>
+            <button class="ctrl-btn" id="btn-p1-up">▲</button>
+            <button class="ctrl-btn" id="btn-p1-down">▼</button>
         </div>
 
-        <canvas id="pongCanvas" width="800" height="500"></canvas>
+        <!-- Tombol P2 (kanan) -->
+        <div class="ctrl-group ctrl-right">
+            <div class="player-label">P2</div>
+            <button class="ctrl-btn" id="btn-p2-up">▲</button>
+            <button class="ctrl-btn" id="btn-p2-down">▼</button>
+        </div>
     </div>
+
     <script type="module" src="js/main.js"></script>
-
 </body>
-
 </html>
